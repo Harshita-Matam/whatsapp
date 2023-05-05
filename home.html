@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>WhatsApp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Changa+One|Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://dl.dropbox.com/s/g7iat7ro010ryof/my_chats.js?raw=1"></script>
+</head>
+<body>
+    
+    <div id="loading">
+    <i class="fab fa-whatsapp loading-logo"></i>
+    <p class="loading-text">Loading . . .</p>
+</div>
+    
+    <div class="top">
+        
+        <div class="sticky">
+            <div class="status-bar">
+                <p id="clock">00:00</p>
+                <div class="float-right">
+                    <i class="fas fa-signal"></i>
+                    <p>4G</p>
+                    <i class="fas fa-battery-half"></i>
+                </div>
+            </div>
+        </div>
+            
+        <div class="sticky-toolbar">
+            <div class="tool-bar">
+                
+                <div class="part1">
+                   <p class="whatsApp">WhatsApp</p>
+                    <div>
+                        <i class="material-icons mi-search" style="margin-right: 15px;">search</i>
+                        <i class="material-icons mi-3dot">more_vert</i>
+                    </div>
+                </div>
+                
+                <div class="part2">
+                    <i class="material-icons mi-camera">camera_alt</i>
+                    <div id="chats" onclick="changeTab('#chats');">&emsp;CHATS&emsp;</div>
+                    <div id="status" onclick="changeTab('#status');">&emsp;STATUS&emsp;</div>
+                    <div id="calls" onclick="changeTab('#calls');">&emsp;CALLS&emsp;</div>
+                </div>
+                
+            </div>
+            
+        </div>
+</div>
+    
+    <div class="menu">
+        <p style="margin-top: 0px;">New group</p>
+        <p>New broadcast</p>
+        <p>WhatsApp Web</p>
+        <p>Starred message</p>
+        <p>Settings</p>
+    </div>
+    
+    <div class="chats-container" style="overflow-x: hidden">
+        
+        <div class="search">
+            <i class="material-icons mi-back-arrow">arrow_back</i>
+            <span><input type="text" placeholder="Search..."></span>
+        </div>
+        
+        <div class="floating-btn"><i class="material-icons">chat</i></div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(0)">
+                <img src="im1.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(0)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Sanjeev Kumar</p>
+                <p class="time">12.30 am</p>
+                </div>
+                <p class="text">Read the book</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">  
+            <div class="pic-container" onclick="pic_preview(1)">
+                <img src="im2.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(1)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Shilpa</p>
+                <p class="time">10:56 pm</p>
+                </div>
+                <p class="text">I'm not back this is just a visit.</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(2)">
+                <img src="im3.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(2)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Kamath</p>
+                <p class="time">11:04 am</p>
+                </div>
+                <p class="text">I'm not karate kid.</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(3)">
+                <img src="im4.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(3)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Shesadri</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text" style="color: #00da4e; font-weight: bold;">Typing...</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(4)">
+                <img src="im5.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(4)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Ravi prasad</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I'm not lazy dude. </p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(5)">
+                <img src="im6.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(5)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Tejaswini</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I love followers.</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(6)">
+                <img src="im7.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(6)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Harsha</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">Congrats bro you won</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(7)">
+                <img src="im8.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(7)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Jagadeesh</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text"><i class="material-icons double-tick">done_all</i>Ok bro</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(8)">
+                <img src="im9.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(8)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Sushma</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">😆😆</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(9)">
+                <img src="im10.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(9)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Nayana</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">Enjoying in Russia </p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(10)">
+                <img src="im11.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(10)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Girish</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I'm me</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(11)">
+                <img src="im12.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(11)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Virat Kohli </p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">Got platinum badge in 6 days</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(12)">
+                <img src="im13.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(12)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Allu arjun</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I'm filming some new movies </p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(13)">
+                <img src="im14.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(13)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Kanthraju</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">lets enjoy Life</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(14)">
+                <img src="im15.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(14)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Doraemon</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I don't speak much </p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(15)">
+                <img src="im16.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(15)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Sandhya</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I know to clone</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(16)">
+                <img src="im17.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(16)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Palak</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I love palak paneer</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(17)">
+                <img src="im18.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(17)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Harshita</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I wanna learn coding </p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(18)">
+                <img src="im19.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(18)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Ammu</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text"><i class="material-icons double-tick">done_all</i>just time pass</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(19)">
+                <img src="im20.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(19)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Jeevitha</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I'm traveling ✈️</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(20)">
+                <img src="im21.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(20)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Rakshita</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text"><i class="material-icons double-tick">done_all</i>I'm fine</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(21)">
+                <img src="im22.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(21)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Bhagya</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">IDK much about it! </p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(22)">
+                <img src="im23.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(22)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Diana</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I Love watching Moj </p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(23)">
+                <img src="im24.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(23)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Cheriyan</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">Let me introduce myself</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(24)">
+                <img src="im25.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(24)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Rishab</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">ok bye</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(25)">
+                <img src="im26.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(25)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Kerala</p>
+                <p class="time">09:10 am</p>
+                </div>
+                <p class="text">I love kitty</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="single-list">
+            <div class="pic-container" onclick="pic_preview(26)">
+                <img src="im27.jpg">
+            </div>
+            
+            <div class="contents-container" onclick="chatClick(26)">
+                <div style="display: flex; justify-content: space-between;">
+                <p class="name">Pubg</p>
+                <p class="time">11:33 am</p>
+                </div>
+                <p class="text">SUBG SUBG </p>
+                <div class="line"></div>
+            </div>
+        </div>
+    
+    </div>
+    
+<!--  #################################  -->
+    
+    <div class="status-container">
+        
+        <div class="search">
+        <i class="material-icons mi-back-arrow">arrow_back</i>
+        <span><input type="text" placeholder="Search..."></span>
+    </div>
+        
+        <div class="floating-btn">
+            <div class="edit"><i class="material-icons">edit</i></div>
+            <div class="camera"><i class="material-icons">photo_camera</i></div>
+        </div>
+        
+        <div class="my-status">
+            <div class="wrapper">
+            <div class="pic">
+                <img src="im1.jpg">
+            </div>
+            <div class="contents">
+                <p class="my-status-text">My Status</p>
+                <p class="tab-to-update-status">Tab to add status update</p>
+            </div>
+                </div>
+            <div class="divider">
+                Recent updates
+            </div>
+        </div>
+        
+        <div class="status-list" onclick="pic_preview(0)">
+            <div class="pic">
+                <div class="wrapper">
+                    <img src="im2.jpg">
+                </div>
+            </div>
+            <div class="contents">
+                <p class="my-status-text">Sanjeev Kumar</p>
+                <p class="tab-to-update-status">Today, 4:17 pm</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="status-list" onclick="pic_preview(3)">
+            <div class="pic">
+                <div class="wrapper">
+                    <img src="im3.jpg">
+                </div>
+            </div>
+            <div class="contents">
+                <p class="my-status-text">sheshadri</p>
+                <p class="tab-to-update-status">Today, 10:40 pm</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="status-list" onclick="pic_preview(5)">
+            <div class="pic">
+                <div class="wrapper">
+                    <img src="im4.jpg">
+                </div>
+            </div>
+            <div class="contents">
+                <p class="my-status-text">Shilpa</p>
+                <p class="tab-to-update-status">Today, 2:46 am</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="status-list" onclick="pic_preview(11)">
+            <div class="pic">
+                <div class="wrapper">
+                    <img src="im5.jpg">
+                </div>
+            </div>
+            <div class="contents">
+                <p class="my-status-text">Virat Kohli </p>
+                <p class="tab-to-update-status">Today, 5:01 pm</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="status-list" onclick="pic_preview(1)">
+            <div class="pic">
+                <div class="wrapper">
+                    <img src="im6.jpg">
+                </div>
+            </div>
+            <div class="contents">
+                <p class="my-status-text">Allu arjun</p>
+                <p class="tab-to-update-status">Today, 3:20 pm</p>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+
+    
+<!--  ###################################  -->
+
+    <div class="calls-container">
+        
+        <div class="search">
+        <i class="material-icons mi-back-arrow">arrow_back</i>
+        <span><input type="text" placeholder="Search..."></span>
+    </div>
+        
+        <div class="floating-btn"><i class="material-icons">phone</i></div>
+        
+        <div class="calls-list">
+            <div class="pic" onclick="pic_preview(1)">
+                <img src="im6.jpg">
+            </div>
+            <div class="contents" onclick="callNow(1,1)">
+                <p class="my-status-text">Allu arjun</p>
+                <p class="tab-to-update-status">Today, 11:11 pm</p>
+                <div class="line"></div>
+            </div>
+            <div class="icon">
+                <i class="material-icons" onclick="callNow(1,1)">videocam</i>
+            </div>
+        </div>
+        
+        <div class="calls-list">
+            <div class="pic" onclick="pic_preview(2)">
+                <img src="im7.jpg">
+            </div>
+            <div class="contents" onclick="callNow(0,2)">
+                <p class="my-status-text">Jagadeesh</p>
+                <p class="tab-to-update-status">Today, 3:21 pm</p>
+                <div class="line"></div>
+            </div>
+            <div class="icon">
+                <i class="material-icons" onclick="callNow(0,2)">call</i>
+            </div>
+        </div>
+        
+        <div class="calls-list">
+            <div class="pic" onclick="pic_preview(8)">
+                <img src="im8.jpg">
+            </div>
+            <div class="contents" onclick="callNow(0,8)">
+                <p class="my-status-text">Diana</p>
+                <p class="tab-to-update-status">Today, 12:46 pm</p>
+                <div class="line"></div>
+            </div>
+            <div class="icon">
+                <i class="material-icons" onclick="callNow(0,8)">call</i>
+            </div>
+        </div>
+        
+        <div class="calls-list">
+            <div class="pic" onclick="pic_preview(0)">
+                <img src="im9.jpg">
+            </div>
+            <div class="contents" onclick="callNow(0,0)">
+                <p class="my-status-text">Shilpa</p>
+                <p class="tab-to-update-status">Yesterday</p>
+                <div class="line"></div>
+            </div>
+            <div class="icon">
+                <i class="material-icons" onclick="callNow(0,0)">call</i>
+            </div>
+        </div>
+        
+        <div class="calls-list">
+            <div class="pic" onclick="pic_preview(3)">
+                <img src="im10.jpg">
+            </div>
+            <div class="contents" onclick="callNow(1,3)">
+                <p class="my-status-text">Nayana</p>
+                <p class="tab-to-update-status">08/sep/2019</p>
+                <div class="line"></div>
+            </div>
+            <div class="icon">
+                <i class="material-icons" onclick="callNow(1,3)">videocam</i>
+            </div>
+        </div>
+        
+        <div class="calls-list">
+            <div class="pic" onclick="pic_preview(5)">
+                <img src="im11.jpg">
+            </div>
+            <div class="contents" onclick="callNow(0,5)">
+                <p class="my-status-text">Girish</p>
+                <p class="tab-to-update-status">03/jan/2019</p>
+                <div class="line"></div>
+            </div>
+            <div class="icon">
+                <i class="material-icons" onclick="callNow(0,5)">call</i>
+            </div>
+        </div>
+    </div>
+
+    
+    <!--  ###################################  -->
+    
+
+    <div class="chat-screen">
+        <div class="tool-bar">
+            <div class="flex">
+                <i class="material-icons mi-back-arrow" style="margin-right: 5px">arrow_back</i>
+                <img id="chat-screen-dp" style="margin-right: 10px" src="im12.jpg"/>
+                <p id="chat-screen-name">Man of Action</p>
+            </div>
+            
+            <div class="flex">
+                <i class="material-icons" style="margin-right: 15px" onclick="makeCall(1);">videocam</i>
+                <i class="material-icons" style="margin-right: 10px" onclick="makeCall(0);">call</i>
+                <i class="material-icons mi-3dot" style="margin-right: 15px">more_vert</i>
+            </div>
+            
+        </div>
+        
+        
+        <div class="chat-msg-container">
+            <div>
+            <ul class="list"></ul>
+            </div>
+            
+        </div>
+        <div class="bottom-ui">
+            <div class="flex">
+                <div class="left-flex">
+                    <div class="content">
+                        <div class="left">
+                            <i class="material-icons" style="margin-right: 5px;">mood</i>
+                            <span><input id="chat_input" type="text" placeholder="Type a message"></span>
+                        </div>
+                        
+                        <div class="right">
+                            <i class="material-icons mi-attach">attach_file</i>
+                            <i class="material-icons" style="margin-right: 5px;">photo_camera</i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-flex">
+                    <i class="material-icons mi-mic">mic</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- ----------dp-preview-container--------- -->
+    <div class="dp-preview-container" onclick="closePreview();">
+        <div class="box">
+            <p id="dp-name">Name</p>
+            <img id="dp-box" src="im13.jpg">
+            <div class="ui-box">
+                <i class="material-icons">chat</i>
+                <i class="material-icons">phone</i>
+                <i class="material-icons">videocam</i>
+                <i class="material-icons">info</i>
+            </div>
+        </div>
+    </div>
+<!--  -----------------  -->
+    
+<!--  ----------Voice Call---------  -->
+    
+    
+    <audio id="tone" loop>
+        <source src="ringtone.mp3">
+    </audio> 
+
+    
+    <div class="voice-call-container">
+        <div class="voice-top">
+            <div class="t1">
+                <p id="call-text"><i class="fab fa-whatsapp" style="font-size: 20px; padding-right: 10px;"></i>WHATSAPP VOICE CALL</p>
+                
+                <p id="voice-name">sheshadri</p>
+                <p style="padding-bottom: 20px;">Calling</p>
+                
+            </div>
+            <div class="t2">
+                <i class="fas fa-user user"></i>
+            </div>
+            <div class="phone"><i class="material-icons" style="font-size: 36px" onclick="callEnd();">call_end</i></div>
+        </div>
+        
+        <div class="bottom">
+            <i class="material-icons" style="font-size: 36px">volume_up</i>
+            <i class="material-icons" style="font-size: 36px">videocam</i>
+            <i class="material-icons" style="font-size: 36px">mic_off</i>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
